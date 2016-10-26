@@ -1,0 +1,52 @@
+@mixin triangle($left) {
+  &:before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: $left;
+    display: block;
+    height: 0;
+    border-bottom: 7px solid #455A64;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+  }
+}
+
+header .dropdown {
+  position: relative;
+}
+header .dropdown > ul.dropdown-menu{
+  white-space: nowrap;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  transform: translateY(-10%);
+  background-color: #455A64;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px rgba(0,0,0,.3);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s;
+  & > li {
+    margin-bottom: 7px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  & > li > a{
+    color: lavender;
+    font-size: 16px;
+    &:hover {
+      text-decoration: none;
+      color: darken(lavender, 5%);
+    }
+  }
+}
+header .dropdown > ul.dropdown-menu[data-for="courses"] {
+  @include triangle(61px);
+}
+header .dropdown > ul.dropdown-menu[data-for="tutorials"] {
+  @include triangle(123px);
+}

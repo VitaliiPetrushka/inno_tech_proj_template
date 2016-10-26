@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+.wrapper,
+.page {
+  height: 100vh; }
+
+/* Header */
+header {
+  padding: 0 20px;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  transition: all .7s;
+  z-index: 100; }
+  header.active {
+    background-color: rgba(0, 0, 0, 0.8); }
+    header.active > ul#header-nav > li.header-learn-more {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(0, -50%); }
+
+/* header background #37474F */
+header ul#header-nav:after {
+  content: '';
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both; }
+
+header ul#header-nav > li {
+  float: left;
+  margin-right: 15px; }
+  header ul#header-nav > li:last-child {
+    margin-right: 0; }
+  header ul#header-nav > li.active > a {
+    color: #acc; }
+  header ul#header-nav > li:hover > a, header ul#header-nav > li:hover > i {
+    color: lavender;
+    text-decoration: none; }
+  header ul#header-nav > li i {
+    color: #fff;
+    pointer-events: none; }
+
+header ul#header-nav > li > a {
+  display: inline-block;
+  padding: 25px 0;
+  text-decoration: none;
+  color: #fff;
+  margin-right: 5px;
+  font-size: 16px;
+  transition: all .2s; }
+  header ul#header-nav > li > a:active, header ul#header-nav > li > a:focus {
+    color: #fff;
+    text-decoration: none; }
+
+header ul#header-nav > li.header-learn-more {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translate(20%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s; }
+  header ul#header-nav > li.header-learn-more a {
+    padding: 7px 15px;
+    background-color: #8ab9b9;
+    border-radius: 4px;
+    color: #fff;
+    transition: all .15s; }
+    header ul#header-nav > li.header-learn-more a:hover {
+      background-color: #7aafaf; }
+
+header ul#header-nav > li.dropdown:hover .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0); }
+
+header .dropdown {
+  position: relative; }
+
+header .dropdown > ul.dropdown-menu {
+  white-space: nowrap;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  transform: translateY(-10%);
+  background-color: #455A64;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s; }
+  header .dropdown > ul.dropdown-menu > li {
+    margin-bottom: 7px; }
+    header .dropdown > ul.dropdown-menu > li:last-child {
+      margin-bottom: 0; }
+  header .dropdown > ul.dropdown-menu > li > a {
+    color: lavender;
+    font-size: 16px; }
+    header .dropdown > ul.dropdown-menu > li > a:hover {
+      text-decoration: none;
+      color: #d1d1f6; }
+
+header .dropdown > ul.dropdown-menu[data-for="courses"]:before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 61px;
+  display: block;
+  height: 0;
+  border-bottom: 7px solid #455A64;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent; }
+
+header .dropdown > ul.dropdown-menu[data-for="tutorials"]:before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 123px;
+  display: block;
+  height: 0;
+  border-bottom: 7px solid #455A64;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent; }
+
+/* Main content */
+.wrapper {
+  overflow: hidden; }
+
+.maincontent {
+  top: 0;
+  position: relative;
+  transition: top 1000ms; }
+
+.page {
+  width: 100%;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px; }
+
+#start-page {
+  position: relative; }
+  #start-page:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    will-change: transform;
+    height: 100vh;
+    background: url("http://www.oddwallpapers.com/wp-content/uploads/2015/11/business-office-wallpapers-4.jpg");
+    background-position: bottom;
+    background-size: cover;
+    transition: all 1000ms; }
+  #start-page.parallax:before {
+    transform: translateY(-20%); }
+  #start-page h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+    opacity: 1;
+    font-size: 50px;
+    color: lavender;
+    transition: all 1000ms; }
+    #start-page h1 span:last-child {
+      color: #acc; }
+  #start-page.parallax h1 {
+    transform: translate(-50%, 280px);
+    opacity: 0; }
+
+.section-2 {
+  background-color: lavender; }
+  .section-2 #prices {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; }
+    .section-2 #prices :after {
+      content: '';
+      display: block;
+      visibility: hidden;
+      height: 0;
+      clear: both; }
+  .section-2 #prices .column {
+    box-sizing: border-box;
+    padding: 20px;
+    flex: 1 1 300px;
+    width: 300px;
+    max-width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    transition: all .15s; }
+
+.section-3 {
+  background-color: #304458; }
+
+.section-4 {
+  background-color: #43A047; }
+
+/* Start page */
+/* Right navigation */
+#right-nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%); }
+
+#right-nav ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0; }
+  #right-nav ul li.right-nav-item {
+    position: relative;
+    height: 13px;
+    margin-bottom: 15px;
+    cursor: pointer; }
+    #right-nav ul li.right-nav-item:last-child {
+      margin-bottom: 0; }
+    #right-nav ul li.right-nav-item:hover:after {
+      background-color: #90A4AE; }
+    #right-nav ul li.right-nav-item:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 15px;
+      width: 15px;
+      border: 2px solid white;
+      border-radius: 50%;
+      background-color: #607D8B;
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.45);
+      transition: all .4s; }
+    #right-nav ul li.right-nav-item.active:after {
+      width: 22px;
+      border-radius: 10px; }

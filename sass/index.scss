@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper,
+.page {
+  height: 100vh;
+}
+
+/* Header */
+@import "header.scss";
+/* Main content */
+.wrapper {
+  overflow: hidden;
+}
+.maincontent {
+  top: 0;
+  position: relative;
+  transition: top 1000ms;
+}
+.page {
+  width: 100%;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#start-page {
+  position: relative;
+  &:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    will-change: transform;
+    height: 100vh;
+    background: url("http://www.oddwallpapers.com/wp-content/uploads/2015/11/business-office-wallpapers-4.jpg");
+    background-position: bottom;
+    background-size: cover;
+    transition: all 1000ms;
+  }
+  &.parallax:before {
+    transform: translateY(-20%);
+  }
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+    opacity: 1;
+    font-size: 50px;
+    color: lavender;
+    transition: all 1000ms;
+    span:last-child {
+      color: #acc;
+    }
+  }
+  &.parallax h1{
+    transform: translate(-50%, 280px);
+    opacity: 0;
+  }
+}
+.section-2 {
+  background-color: lavender;
+  #prices {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    :after {
+      content: '';
+      display: block;
+      visibility: hidden;
+      height: 0;
+      clear: both;
+    }
+  }
+  #prices .column {
+    box-sizing: border-box;
+    padding: 20px;
+    flex: 1 1 300px;
+    width: 300px;
+    max-width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    transition: all .15s;
+  }
+}
+.section-3 {
+  background-color: #304458;
+}
+.section-4 {
+  background-color: #43A047;
+}
+/* Start page */
+
+/* Right navigation */
+@import "right_nav.scss";

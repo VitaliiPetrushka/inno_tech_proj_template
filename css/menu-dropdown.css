@@ -1,0 +1,49 @@
+header .dropdown {
+  position: relative; }
+
+header .dropdown > ul.dropdown-menu {
+  white-space: nowrap;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  transform: translateY(-10%);
+  background-color: #455A64;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s; }
+  header .dropdown > ul.dropdown-menu > li {
+    margin-bottom: 7px; }
+    header .dropdown > ul.dropdown-menu > li:last-child {
+      margin-bottom: 0; }
+  header .dropdown > ul.dropdown-menu > li > a {
+    color: lavender;
+    font-size: 16px; }
+    header .dropdown > ul.dropdown-menu > li > a:hover {
+      text-decoration: none;
+      color: #d1d1f6; }
+
+header .dropdown > ul.dropdown-menu[data-for="courses"]:before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 61px;
+  display: block;
+  height: 0;
+  border-bottom: 7px solid #455A64;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent; }
+
+header .dropdown > ul.dropdown-menu[data-for="tutorials"]:before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 123px;
+  display: block;
+  height: 0;
+  border-bottom: 7px solid #455A64;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent; }
